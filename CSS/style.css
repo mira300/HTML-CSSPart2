@@ -1,88 +1,74 @@
 @font-face {
-    font-family:'HankenGrotrsk' ;
+    font-family: 'HankenGrotrsk';
     font-display: swap;
     font-weight: 100 900;
-    src: url('');
-}
-
-
-:root{
-
-
-    --clr-primary-400:hsl(252,100%,67%);
-    --clr-primary-500:hsl(256,72%,46%);
-    
-    --clr-secondary-400:hsl(241,81%,54%);
-    --clr-secondary-500:hsl(241,72%,46%);
-
-    
-    --clr-neutral-100:hsl(0,0%,100%);
-    --clr-neutral-200:hsl(221,100%,96%);
-    --clr-neutral-300:hsl(241,100%,89%);
-    --clr-neutral-700:hsl(224,30%,27%);
-
-    
-    --fw-regular:500;
-    --fw-bold:700;
-    --fw-black:800;
-    
-    --ff-default:'Fraunces', serif;
-
-    --fs-400:1.125rem;
-    --fs-500:1.125rem;
-    --fs-600:1.5rem;
-    --fs-700:1.75rem;
-    --fs-800:2rem;
-    --fs-900:5rem;
+    src: url('chemin/vers/le/fichier-de-la-police.woff2');
+  }
+  
+  :root {
+    --clr-primary-400: hsl(252, 100%, 67%);
+    --clr-primary-500: hsl(256, 72%, 46%);
+    --clr-secondary-400: hsl(241, 81%, 54%);
+    --clr-secondary-500: hsl(241, 72%, 46%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(221, 100%, 96%);
+    --clr-neutral-300: hsl(241, 100%, 89%);
+    --clr-neutral-700: hsl(224, 30%, 27%);
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-black: 800;
+    --ff-default: 'Fraunces', serif;
+    --fs-400: 1.125rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+    --gradient-to-transparent: linear-gradient(var(--clr-primary-500), hsla(var(--clr-secondary-500), 0));
+    --clr-accent-1: hsl(var(--clr-accent-1));
+    --clr-accent-2: hsl(var(--clr-accent-2));
+    --clr-accent-3: hsl(var(--clr-accent-3));
+    --clr-accent-4: hsl(var(--clr-accent-4));
 
 
 
-
-
-
-
-
-
-}
-
-*,*::before,*::after{
+   
+  }
+  
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
-}
-*{
-    margin:0;
-font:inherit;
-
-}
-img,svg{
-
+    margin: 0;
+    font: inherit;
+  }
+  
+  img,
+  svg {
     display: block;
     max-width: 100%;
-}
-
-
-body{
-
+  }
+  
+  body {
     font-family: var(--ff-default);
     font-size: var(--fs-400);
     color: var(--clr-neutral-700);
-}
-
-
-@media(min-width:600px)
-{
-    body{
-        min-height: 100vh;
-        display: grid;
-        place-items:center;
+  }
+  
+  @media (min-width: 600px) {
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
     }
-}
-
-.section-title{
+  }
+  
+  .section-title {
     font-weight: var(--fw-bold);
     font-size: var(--fs-600);
-}
-
-.button{
+  }
+  
+  .button {
     color: var(--clr-neutral-100);
     line-height: 1;
     background: var(--clr-neutral-700);
@@ -90,7 +76,92 @@ body{
     border: 0;
     border-radius: 100vw;
     cursor: pointer;
-}
-.button:hover,.button:focus-visible{
+  }
+  
+  .button:hover,
+  .button:focus-visible {
     background-color: var(--clr-primary-400);
-}
+  }
+  
+  .result-summary {
+    --padding: var(padding);
+    --border-radius: 2rem;
+    max-width: 46rem;
+    display: grid;
+  }
+  
+  @media (min-width: 600px) {
+    .result-summary {
+      margin-inline: 1rem;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 2rem;
+      box-shadow: 0.5rem 1rem 3rem var(--clr-neutral-700);
+      overflow: hidden;
+    }
+  }
+  
+  .results {
+    color: var(--clr-neutral-100);
+    text-align: center;
+    background-color: var(--clr-primary-400);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+  
+  .results,
+  .summary {
+    padding:8rem;
+  }
+  
+  @media (min-width: 600px) {
+    .results {
+      border-radius: var(--border-radius);
+    }
+  }
+  
+  .grid-flow {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+  }
+  
+  .grid-flow[data-spacing="large"] {
+    gap: 2rem;
+  }
+  
+  .result-score {
+    width: 12rem;
+    margin-inline: auto;
+    background: var(--gradient-to-transparent);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    place-content: center;
+  }
+  
+  .result-score span {
+    display: block;
+    font-size: var(--fs-900);
+    font-weight: var(--fw-black);
+    line-height: 1;
+    color: var(--clr-neutral-100);
+  }
+  
+  .result-rank {
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-700);
+    font-weight: var(--fw-bold);
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: lightblue;
+  }
+  
+ 
+  
+  .summary-item[data-item-type="accent-1"] {
+    --item-color: var(--clr-accent-1);
+  }
