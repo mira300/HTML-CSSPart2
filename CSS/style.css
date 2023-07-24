@@ -84,7 +84,7 @@
   }
   
   .result-summary {
-    --padding: var(padding);
+    --padding: 2.5rem;
     --border-radius: 2rem;
     max-width: 46rem;
     display: grid;
@@ -109,7 +109,7 @@
   
   .results,
   .summary {
-    padding:8rem;
+    padding:var(--padding);
   }
   
   @media (min-width: 600px) {
